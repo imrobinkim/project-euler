@@ -3,34 +3,25 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 function fibonacciSequence() {
-  let fibonacciArr = [1, 2],
-      index = 0,
-      sum,
-      evenNumArr =[];
+  let numOne = 1,
+      numTwo = 2,
+      sum = 3,
+      sumOfEvenNumbers = 2;
 
-  while (fibonacciArr[fibonacciArr.length - 1] <= 4000000) {
-    sum = fibonacciArr[index] + fibonacciArr[index + 1];
-    fibonacciArr.push(sum);
-    index++;
-  }
+  while (sum <= 4000000) {
+    sum = numOne + numTwo;
 
-  fibonacciArr.forEach(number => {
-    if (isEven(number)) {
-      evenNumArr.push(number)
+    if (sum % 2 === 0) {
+      sumOfEvenNumbers += sum
     }
-  });
 
-  return sumOfEvenNumbers(evenNumArr);
-}
-
-function isEven(num) {
-  if (num % 2 === 0) {
-    return true
-  } else {
-    return false
+    numOne = numTwo;
+    numTwo = sum;
   }
+
+  return sumOfEvenNumbers;
 }
 
-function sumOfEvenNumbers(arr) {
-  return arr.reduce((partialSum, i) => partialSum + i);
-}
+// function sumOfEvenNumbers(arr) {
+//   return arr.reduce((partialSum, i) => partialSum + i);
+// }
