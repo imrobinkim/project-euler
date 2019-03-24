@@ -2,37 +2,19 @@
 // What is the largest prime factor of the number 600851475143 ?
 
 
+//Prime Number: natural number, greater than 1, whose only divisors are 1 and itself
+//Factor: numbers that when multiplied together produces another number
+//Prime Factorization: start by dividing number by smallest prime number (2) until number is no longer evenly divisible by 2
+//    then increment divisor to next smallest prime number (e.g. 3, 5, 7, etc) until only numbers left are prime numbers
 
 function largestPrimeFactor(num) {
-  let i = num,
-      largest = 0;
-
-  while (largest === 0) {
-    if (isFactor(num, i) && isPrime(i)) {
-      largest = i;
-    }
-    i--;
-  }
-
-  return largest;
-}
-
-function isFactor(multiple, possibleFactor) {
-  if (multiple % possibleFactor === 0) {
-    return true
-  }
-}
-
-function isPrime(possiblePrime) {
-	if (possiblePrime < 2) {
-		return false
-  }
-
-  for (i= possiblePrime - 1; i >= 2; i--) {
-		if (possiblePrime % i === 0) {
-        	return false
+  let divisor = 2;
+  while (num > 1) {
+    if (num % divisor === 0) {
+      num /= divisor
+    } else {
+      divisor ++;
     }
   }
-
-	return true
+  return divisor
 }
