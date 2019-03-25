@@ -6,6 +6,11 @@
 //Factor: numbers that when multiplied together produces another number
 //Prime Factorization: start by dividing number by smallest prime number (2) until number is no longer evenly divisible by 2
 //    then increment divisor to next smallest prime number (e.g. 3, 5, 7, etc) until only numbers left are prime numbers
+// **All numbers can be expressed as the product of primes**
+// 102 = 2 x 3 x 17
+// 712 = 2 x 2 x 2 x 89
+// using this method you don't have to actually calculate any primes b/c they'll already be all primes
+
 
 function largestPrimeFactor(num) {
   let divisor = 2;

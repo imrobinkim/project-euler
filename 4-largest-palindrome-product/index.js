@@ -2,8 +2,9 @@
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
 function isPalindrome(num) {
-  let reversed = parseInt(num.toString().split('').reverse().join(''))
-  if (reversed === num) {
+  // let reversed = parseInt(num.toString().split('').reverse().join(''))... if comparing with identity op ===, aka w/o type conversion
+  let reversed = num.toString().split('').reverse().join('')
+  if (reversed == num) {
     return true
   } else {
     return false
