@@ -21,7 +21,3 @@ function fibonacciSequence() {
 
   return sumOfEvenNumbers;
 }
-
-// function sumOfEvenNumbers(arr) {
-//   return arr.reduce((partialSum, i) => partialSum + i);
-// }
