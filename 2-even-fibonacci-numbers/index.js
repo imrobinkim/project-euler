@@ -21,3 +21,6 @@ function fibonacciSequence() {
 
   return sumOfEvenNumbers;
 }
+
+//fibonacciSequence()
+//4613732
